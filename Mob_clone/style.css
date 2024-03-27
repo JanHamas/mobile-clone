@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.main-mobile {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  background: white;
+  border-radius: 30px;
+  border: 8px solid rgb(74, 73, 73);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.camera {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  z-index: 100;
+}
+.buttons {
+  position: absolute;
+  top: 90px;
+  right: -11px;
+  cursor: pointer;
+}
+.buttons :where(.vol-btn, .pow-btn) {
+  width: 6px;
+  height: 80px;
+  background: rgb(74, 73, 73);
+  border-radius: 6px;
+}
+.buttons .pow-btn {
+  height: 60px;
+  margin-top: 15px;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
+  background: url(assets/screen_pic.jfif) no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.mob-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  z-index: 20;
+  position: relative;
+}
+.mob-header .left,
+.mob-header .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.mob-header .icon-small {
+  font-size: 15px;
+}
+.mob-header .icon-small img {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+/* main-slider */
+.main-slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(assets/main-slider.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 21px;
+  /* display: none; */
+}
+.main-slider.hide-slider {
+  height: 0%;
+}
+.sleep-screen .main-slider {
+  height: 100%;
+  background: black;
+}
+.on-screen .main-slider {
+  height: 0;
+  background: black;
+}
+/* screen Swiper */
+.swiper {
+  width: 100%;
+  height: 77%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  background: white;
+}
+.google-search {
+  width: 250px;
+  height: 45px;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-left: 20px;
+  position: relative;
+}
+.google-search input {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  border: none;
+  outline: none;
+  padding: 0 50px;
+}
+.google-search .icon {
+  position: absolute;
+  top: 12px;
+}
+.google-search .icon img {
+  width: 20px;
+  cursor: pointer;
+}
+.google-icon {
+  left: 12px;
+}
+.voice-icon {
+  right: 14px;
+}
+/* main-body */
+.rows {
+  margin-top: 220px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 14px;
+}
+.row img {
+  width: 35px;
+  height: 35px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.screen .swiper-slide:nth-child(2) .rows,
+.screen .swiper-slide:nth-child(3) .rows {
+  margin-top: 0;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  padding: 0 6px;
+  position: relative;
+}
+.footer .icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  padding: 0 20px;
+  position: absolute;
+  z-index: 16;
+}
+
+.footer span:nth-child(3) {
+  transform: rotate(-90deg);
+}
+.footer span {
+  font-size: 17px;
+  cursor: pointer;
+}
+/* Now creating app */
+/* Whatsapp */
+.whatsapp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
+  z-index: 10;
+  overflow: hidden;
+  transform: scale(0);
+  transition: 0.2s;
+}
+.screen.show .whatsapp {
+  transform: scale(1);
+}
+.whatsapp .header {
+  padding: 35px 8px 7px;
+  background: #128c7e;
+  color: white;
+}
+.whatsapp .header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.whatsapp .header .navbar .left span {
+  font-size: 18px;
+}
+.whatsapp .header .navbar .right span {
+  font-size: 17px;
+  cursor: pointer;
+  margin-left: 9px;
+}
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+}
+.status-bar span {
+  cursor: pointer;
+}
+.status-bar .underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  border-radius: 20px;
+  background: white;
+  transition: left 0.3s ease;
+}
+.whatsapp.chats-under .underline {
+  left: 0px;
+}
+.whatsapp.status-under .underline {
+  left: 105px;
+}
+.whatsapp.calls-under .underline {
+  left: 200px;
+}
+/* main body */
+.body {
+  height: 100%;
+}
+/* creating  chat-body */
+.whatsapp .body .chats {
+  height: 100%;
+  padding-bottom: 30px;
+  overflow-y: scroll;
+  background: white;
+}
+.whatsapp.close-chat .chats {
+  display: none;
+}
+.chats::-webkit-scrollbar {
+  display: none;
+}
+.whatsapp .body .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 18px 0;
+}
+.whatsapp .user .profile img {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.whatsapp .user-name {
+  padding-right: 60px;
+}
+.whatsapp .user-name .p-chat {
+  font-size: 14px;
+}
+/* Creating status-body */
+.whatsapp .body .status {
+  height: 100%;
+  padding-bottom: 30px;
+  overflow-y: scroll;
+  background: white;
+  display: none;
+}
+.whatsapp.show-status .status {
+  display: block;
+}
+.status::-webkit-scrollbar {
+  display: none;
+}
+
+.status .user:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 100px;
+  margin-bottom: 10px;
+}
+/* Creating calls-body */
+.whatsapp .body .calls {
+  height: 100%;
+  padding-bottom: 30px;
+  overflow-y: scroll;
+  background: white;
+  display: none;
+}
+.whatsapp.show-calls .calls {
+  display: block;
+}
+.calls::-webkit-scrollbar {
+  display: none;
+}
+.whatsapp .body .calls .time {
+  font-size: 14px;
+}
+.whatsapp .body .calls .time i {
+  color: green;
+  font-size: 17px;
+  margin-right: 3px;
+}
+.whatsapp .body .calls .user span:last-child {
+  color: green;
+  font-size: 20px;
+}

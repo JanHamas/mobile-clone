@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile ! Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-mobile">
+      <div class="camera"></div>
+      <div class="buttons">
+        <div class="vol-btn"></div>
+        <div class="pow-btn" onclick="sleep()"></div>
+      </div>
+      <div class="screen">
+        <!-- mob-header -->
+        <div class="mob-header">
+          <div class="left">
+            <span class="icon-small">2:00 PM</span>
+            <span class="icon-small"><i class="ri-settings-2-line"></i></span>
+          </div>
+          <div class="right">
+            <span class="icon-small"><i class="ri-signal-wifi-fill"></i></span>
+            <span class="icon-small"><img src="assets/signal.png" /></span>
+            <span class="icon-small"><i class="ri-battery-low-line"></i></span>
+          </div>
+        </div>
+        <div class="main-slider" onclick="hideSlider()"></div>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="google-search">
+                <span class="google-icon icon"
+                  ><img src="assets/search.png"
+                /></span>
+                <input type="text" />
+                <div class="voice-icon icon">
+                  <img src="assets/google-voice.png" />
+                </div>
+              </div>
+              <!-- main-body -->
+              <div class="rows">
+                <div class="row">
+                  <img src="assets/chrome.png" />
+                  <img src="assets/search.png" />
+                  <img src="assets/xing.png" />
+                  <img src="assets/line.png" />
+                </div>
+                <div class="row">
+                  <img src="assets/spotify.png" />
+                  <img src="assets/youtube.png" />
+                  <img src="assets/whatsapp.png" onclick="openWhatsApp()" />
+                  <img src="assets/instagram.png" />
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="rows">
+                <div class="row">
+                  <img src="assets/chrome.png" />
+                  <img src="assets/line.png" />
+                  <img src="assets/whatsapp.png" />
+                  <img src="assets/instagram.png" />
+                </div>
+                <div class="row">
+                  <img src="assets/gta-5.png" />
+                  <img src="assets/igi.jpg" />
+                  <img src="assets/manager.png" />
+                  <img src="assets/map.png" />
+                </div>
+                <div class="row">
+                  <img src="assets/message.png" />
+                  <img src="assets/messenger.png" />
+                  <img src="assets/netflix.png" />
+                  <img src="assets/notepade.jpg" />
+                </div>
+                <div class="row">
+                  <img src="assets/odnoklassniki.png" />
+                  <img src="assets/pinterest.png" />
+                  <img src="assets/pubg.png" />
+                  <img src="assets/setting.jpg" />
+                </div>
+                <div class="row">
+                  <img src="assets/facebook.png" />
+                  <img src="assets/snapchat.png" />
+                  <img src="assets/spotify.png" />
+                  <img src="assets/twitter.png" />
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="rows">
+                <div class="row">
+                  <img src="assets/telephone.png" />
+                  <img src="assets/temple-run-100.png" />
+                  <img src="assets/twitter.png" />
+                  <img src="assets/whatsapp.png" />
+                </div>
+                <div class="row">
+                  <img src="assets/facebook.png" />
+                  <img src="assets/vkontakte.png" />
+                  <img src="assets/search.png" />
+                  <img src="assets/xing.png" />
+                </div>
+                <div class="row">
+                  <img src="assets/chrome.png" />
+                  <img src="assets/foursquare.png" />
+                  <img src="assets/discord.png" />
+                  <img src="assets/file manager.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <!-- whatsapp -->
+        <div class="whatsapp">
+          <div class="header">
+            <div class="navbar">
+              <div class="left">
+                <span>Whatsapp</span>
+              </div>
+              <div class="right">
+                <span><i class="ri-camera-line"></i></span>
+                <span><i class="ri-search-line"></i></span>
+                <span><i class="ri-more-2-fill"></i></span>
+              </div>
+            </div>
+            <div class="status-bar">
+              <div class="underline"></div>
+              <span onclick="OnChatsBody() ">Chats</span>
+              <span onclick="OnStatusBody()">Status</span>
+              <span onclick="OnCallsBody()">Calls</span>
+            </div>
+          </div>
+          <div class="body">
+            <div class="chats">
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f1.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f2.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f3.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f4.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f5.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f6.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f7.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f8.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f9.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f10.jfif" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f11.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f12.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f13.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas
+                  <div class="p-chat">
+                    <span><i class="ri-check-double-line"></i> </span> Charta ye
+                    korye
+                  </div>
+                </div>
+                <div class="time">5:30</div>
+              </div>
+            </div>
+            <div class="status">
+              <div class="user">
+                <h3>Status</h3>
+                <h3><i class="ri-more-2-fill"></i></h3>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/status 1.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  My Status
+                  <div class="time">Top to add status update</div>
+                </div>
+              </div>
+              <div class="user">
+                <h4>Views Updates</h4>
+                <h4><i class="ri-arrow-up-s-fill"></i></h4>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/status 2.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Janan Jan
+                  <div class="time">Today</div>
+                </div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/status 3.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Janan Jan
+                  <div class="time">Today</div>
+                </div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/status 4.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Janan Jan
+                  <div class="time">Today</div>
+                </div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/status 5.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Janan Jan
+                  <div class="time">Today</div>
+                </div>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/status 6.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Janan Jan
+                  <div class="time">Today</div>
+                </div>
+              </div>
+            </div>
+            <div class="calls">
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f1.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f2.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f3.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span><i class="ri-arrow-right-up-line"></i></span>March 9,
+                    2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-vidicon-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f4.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span><i class="ri-arrow-right-up-line"></i></span>March 9,
+                    2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-vidicon-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f5.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span><i class="ri-arrow-right-up-line"></i></span>March 9,
+                    2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-vidicon-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f6.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f7.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f8.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span><i class="ri-arrow-right-up-line"></i></span>March 9,
+                    2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-vidicon-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/user.png" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f9.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f10.jfif" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+              <div class="user">
+                <div class="profile">
+                  <img src="assets/whatsapp img/f11.jpg" alt="" />
+                </div>
+                <div class="user-name">
+                  Almas (4)
+                  <div class="time">
+                    <span
+                      ><i
+                        class="ri-arrow-left-down-line"
+                        style="color: red"
+                      ></i></span
+                    >March 9, 2021, 5:30
+                  </div>
+                </div>
+                <span><i class="ri-phone-fill"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+          <div class="row last-row">
+            <img src="assets/setting.jpg" />
+            <img src="assets/x.png" />
+            <img src="assets/twitter.png" />
+            <img src="assets/github.png" />
+          </div>
+          <div class="icons">
+            <span onclick="closeScreen()"><i class="ri-square-line"></i></span>
+            <span onclick="closeScreen()"><i class="ri-circle-line"></i></span>
+            <span onclick="back()"><i class="ri-triangle-line"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
